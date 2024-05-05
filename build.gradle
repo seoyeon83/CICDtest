@@ -1,7 +1,23 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		//특정 버전을 명시하지 않아야 아래의 ${springBootVersion}의 버전을 따라가게 됨
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.5'
-	id 'io.spring.dependency-management' version '1.1.4'
+//	id 'org.springframework.boot' version '3.2.5'
+//	id 'io.spring.dependency-management' version '1.1.4'
+	id 'org.springframework.boot' version '2.7.1'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE' //스프링부트의 의존성을 관리해주는 플러그인
+
 }
 
 group = 'com.example'
